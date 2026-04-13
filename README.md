@@ -32,40 +32,8 @@ Terraform (Infrastructure)
 ---
 
 ## 🏗️ Architecture Diagram
-                    ┌───────────────┐
-                    │   Developer   │
-                    └──────┬────────┘
-                           │
-                           ▼
-                  ┌─────────────────┐
-                  │     GitHub      │
-                  └──────┬──────────┘
-                         │ (Webhook Trigger)
-                         ▼
-                  ┌─────────────────┐
-                  │     Jenkins     │
-                  │  (EC2 Instance) │
-                  └──────┬──────────┘
-                         │
-         ┌───────────────┼────────────────┐
-         │               │                │
-         ▼               ▼                ▼
- ┌────────────┐  ┌──────────────┐  ┌──────────────┐
- │  Docker    │  │ Docker Hub   │  │  kubectl     │
- │  Build     │  │  Push Image  │  │  Deploy      │
- └────────────┘  └──────────────┘  └──────┬───────┘
-                                          │
-                                          ▼
-                               ┌──────────────────┐
-                               │   Amazon EKS     │
-                               │ Kubernetes Cluster│
-                               └────────┬─────────┘
-                                        │
-                                        ▼
-                               ┌──────────────────┐
-                               │  Application Pod │
-                               │   (Flask App)    │
-                               └──────────────────┘
+![](architecture.png)
+![](architecture2.png)
 
 # 📁 Project Structure
 
